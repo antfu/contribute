@@ -11,7 +11,7 @@ Hi! We are really excited that you are interested in contributing. This is a gen
 
 We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), we highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
 
-We will use `ni`'s commands in the following code snippets. If you are not using it, you can do the convertion yourself: `ni = pnpm install`, `nr = pnpm run`.
+We will use `ni`'s commands in the following code snippets. If you are not using it, you can do the conversion yourself: `ni = pnpm install`, `nr = pnpm run`.
 
 1. [Enable Corepack](#corepack)
 2. Install dependencies with `ni` under the project root
@@ -24,7 +24,7 @@ Start the development environment.
 
 If it's a Node.js package, it will start the build process in watch mode, or [stub the passive watcher when using `unbuild`](https://antfu.me/posts/publish-esm-and-cjs#stubbing).
 
-If it's a frontend project, it commonly starts the dev server that you can development and see the changes in realtime.
+If it's a frontend project, it commonly starts the dev server then you can develop and see the changes in realtime.
 
 ### `nr play`
 
@@ -48,7 +48,7 @@ Learn more about the [ESLint Setup](#eslint).
 
 Run the tests. We mostly using [Vitest](https://vitest.dev/) - a replacement of [Jest](https://jestjs.io/).
 
-You can filter the tests to be run by `nr test [match]`, for example, `nr test foo` will only run test files that contains `foo`.
+You can filter the tests to be run by `nr test [match]`, for example, `nr test foo` will only run test files that contain `foo`.
 
 Config options are often under the `test` field of `vitest.config.ts` or `vite.config.ts`.
 
@@ -58,7 +58,7 @@ For some projects, we might have multiple types of tests set up. For example `nr
 
 ### `nr docs`
 
-If the project contains a documentation, you can run `nr docs` to start the documentation dev server. Use `nr docs:build` to build the docs for production.
+If the project contains documentation, you can run `nr docs` to start the documentation dev server. Use `nr docs:build` to build the docs for production.
 
 ### `nr`
 
@@ -70,7 +70,7 @@ For more, you can run bare `nr`, which will prompt a list of all available scrip
 
 Before you start to work on a feature pull request, it's always better to open a feature request issue first to discuss with the maintainers whether the feature is desired and the design of those features. This would help save time for both the maintainers and the contributors and help features to be shipped faster.
 
-For typo fixes, it's recommend to batch multiple typo fixes into one pull request to maintain a cleaner commit history.
+For typo fixes, it's recommended to batch multiple typo fixes into one pull request to maintain a cleaner commit history.
 
 ### Commit Convention
 
@@ -89,7 +89,7 @@ If you don't know how to send a Pull Request, we recommend reading [the guide](h
 
 When sending a pull request, make sure your PR's title also follows the [Commit Convention](#commit-conventions).
 
-If you PR fixes or resolves an existing issue, please add a line as following in your PR description (replace `123` with a real issue number):
+If your PR fixes or resolves an existing issue, please add the following line in your PR description (replace `123` with a real issue number):
 
 ```markdown
 fix #123
@@ -119,7 +119,7 @@ You only need to do it once after Node.js is installed.
 
 [Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-Under projects with configures shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use that version to run your command. This make sure everyone working on this project will have exact same behavior for the dependencies and the lockfile.
+Under projects with configures shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use that version to run your command. This makes sure everyone working on this project will have the same behavior for the dependencies and the lockfile.
 
 </td><td width="500px"><br>
 
@@ -164,7 +164,7 @@ VS Code's `settings.json`
 
 Since ESLint is already configured to format the code, there is no need to duplicate the functionality of Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
 
-If you have Prettier installed in your editor, we recommend you to disable it when working on the project to avoid conflicting.
+If you have Prettier installed in your editor, we recommend you disable it when working on the project to avoid conflict.
 
 ## 🗒 Additional Info
 
