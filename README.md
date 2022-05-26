@@ -11,7 +11,7 @@
 
 I use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), I highly recommand you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
 
-> I will use `ni`'s commands in the following code snippets. If you are not using it, the convention is `ni = pnpm install`, `nr = pnpm run`
+I will use `ni`'s commands in the following code snippets. If you are not using it, you can do convention yourself: `ni = pnpm install`, `nr = pnpm run`
 
 1. [Enable Corepack](#corepack)
 3. Install dependencies with `ni` under the project root
@@ -25,6 +25,10 @@ Start developement environment.
 If it's a Node.js package, it will start the build process in watch mode, or [stub the passive watcher when using `unbuild`](https://antfu.me/posts/publish-esm-and-cjs#stubbing).
 
 If it's a frontend project, it commonly starts the dev server that you can developement and see the changes in realtime.
+
+#### `nr play`
+
+If it's a Node.js package, it might start a dev server for the playground. The code is commonly under `playgound/`.
 
 #### `nr build`
 
@@ -64,21 +68,53 @@ corepack enable
 
 You only need to do it once after Node.js is installed.
 
+<table><tr><td width="400px" valign="top">
+
 #### What's Corepack
+  
+[Corepack](https://nodejs.org/api/corepack.html) make sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-[Corepack](https://nodejs.org/api/corepack.html) make sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`, for example:
+When Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use it do run your command. This make sure everyone working on this project will have exact same behaviour for the dependencies and the lockfile.
 
-```json
+</td><td width="600px"><br>
+
+`package.json`
+
+```jsonc
 {
   "packageManager": "pnpm@7.1.5"
 }
 ```
 
-When Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use it do run your command. This make sure everyone working on this project will have exact same behaviour for the dependencies and the lockfile.
+</td></tr></table>
 
 ### ESLint
 
-// TODO:
+I use [ESLint](https://eslint.org/) for both linting and formatting with [my custom config preset](https://github.com/antfu/eslint-config).
+
+<table><tr><td width="400px" valign="top">
+  
+#### IDE Setup
+
+I recommand using [VS Code](https://code.visualstudio.com/) along with the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+  
+With the settings on the right, you can have auto fix and formatting when you save the code you are editing.
+
+</td><td width="600px"><br>
+
+VS Code's `settings.json`
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true
+  }
+}
+```
+  
+</td></tr></table>
+  
 
 ### Why no Prettier
 
