@@ -7,11 +7,11 @@
 - [Node.js](https://nodejs.org/), using the [latest LTS](https://nodejs.org/en/about/releases/)
 - [`pnpm`](https://pnpm.io/) for package management, as a replacement of [`npm`](https://docs.npmjs.com/cli/v8)
 
-## 👨‍💻 Development Setup
+## 👨‍💻 Repo Setup
 
-I use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), I highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
+We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), we highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
 
-I will use `ni`'s commands in the following code snippets. If you are not using it, you can do convention yourself: `ni = pnpm install`, `nr = pnpm run`
+We will use `ni`'s commands in the following code snippets. If you are not using it, you can do convention yourself: `ni = pnpm install`, `nr = pnpm run`
 
 1. [Enable Corepack](#corepack)
 3. Install dependencies with `ni` under the project root
@@ -36,17 +36,17 @@ Build the project for production.
 
 ### `nr lint`
 
-I use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lint for JSON, YAML and Markdown files if exists.
+We use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lint for JSON, YAML and Markdown files if exists.
 
 You can run `nr lint --fix` to have ESLint do the auto formatting and linting fix for you.
 
 Learn more about the [ESLint Setup](#eslint).
 
-[**I don't use Prettier**](#why-no-prettier).
+[**We don't use Prettier**](#why-no-prettier).
 
 ### `nr test`
 
-Run the tests. I mostly using [Vitest](https://vitest.dev/) - a replacement of [Jest](https://jestjs.io/).
+Run the tests. We mostly using [Vitest](https://vitest.dev/) - a replacement of [Jest](https://jestjs.io/).
 
 You can filter the tests to be run by `nr test [match]`, for example, `nr test foo` will only run test files that contains `foo`.
 
@@ -57,6 +57,27 @@ Vitest runs in watch mode by default, so you can modify the code and see the tes
 ### `nr`
 
 For more, you can run bare `nr`, it will prompt a list of all available scripts.
+
+## 🙌 Sending Pull Request
+
+### Discuss First
+
+Before you start to work on a feature pull request, it's always better to open an feature request issue first to discuss with the maintainers whether the feature is desired and the design of those features. This would help save time for both the maintainers and the contributors and help features to be shipped faster.
+
+For typo fixes, it's recommend to batch multiple typo fixes into on pull request when possible to maintainer a cleaner commit history.
+
+### Commit conventions
+
+We use [Conventional Commits](https://www.conventionalcommits.org/) for commits, which allow the changelog to be auto generated based on the commits.
+
+Note that `fix:` and `feat:` are for **actually code changes** (that might affects logics).
+For typo or document changes, use `docs:` or `chore:` instead:
+
+- ~~`fix: typo`~~ -> `docs: fix typo`
+
+### Pull Request
+
+// TODO:
 
 ## 📖 References
 
@@ -94,14 +115,14 @@ When Corepack is enabled, under projects with configures on the right, it will i
 
 ### ESLint
 
-I use [ESLint](https://eslint.org/) for both linting and formatting with [my custom config preset](https://github.com/antfu/eslint-config).
+We use [ESLint](https://eslint.org/) for both linting and formatting with [my custom config preset](https://github.com/antfu/eslint-config).
 
 <table><tr><td width="500px" valign="top">
 
 #### IDE Setup
 
-I recommend using [VS Code](https://code.visualstudio.com/) along with the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-  
+We recommend using [VS Code](https://code.visualstudio.com/) along with the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
 With the settings on the right, you can have auto fix and formatting when you save the code you are editing.
 
 </td><td width="500px"><br>
