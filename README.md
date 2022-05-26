@@ -87,7 +87,7 @@ If you don't know how to send a Pull Request, we recommend reading [the guide](h
 
 When send a pull request, make sure your PR title also follows the [Commit Convention](#commit-conventions).
 
-If you PR fixes or resolves an existing issue, please add a line as following in your PR description (replace `123` will real issue number):
+If you PR fixes or resolves an existing issue, please add a line as following in your PR description (replace `123` with a real issue number):
 
 ```markdown
 fix #123
