@@ -11,16 +11,16 @@ Hi! We are really excited that you are interested in contributing. This is a gen
 
 We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), we highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
 
-We will use `ni`'s commands in the following code snippets. If you are not using it, you can do convertion yourself: `ni = pnpm install`, `nr = pnpm run`.
+We will use `ni`'s commands in the following code snippets. If you are not using it, you can do the convertion yourself: `ni = pnpm install`, `nr = pnpm run`.
 
 1. [Enable Corepack](#corepack)
 2. Install dependencies with `ni` under the project root
 
-## 💡 Common Scripts
+## 💡 Commands
 
 ### `nr dev`
 
-Start development environment.
+Start the development environment.
 
 If it's a Node.js package, it will start the build process in watch mode, or [stub the passive watcher when using `unbuild`](https://antfu.me/posts/publish-esm-and-cjs#stubbing).
 
@@ -74,7 +74,9 @@ For typo fixes, it's recommend to batch multiple typo fixes into one pull reques
 
 ### Commit Convention
 
-We use [Conventional Commits](https://www.conventionalcommits.org/) for commits, which allows the changelog to be auto-generated based on the commits. Please read it through the guide.
+We use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages, which allows the changelog to be auto-generated based on the commits. Please read the guide through if you aren't familiar with it already.
+
+Only `fix:` and `feat:` will be presented in the change.
 
 Note that `fix:` and `feat:` are for **actual code changes** (that might affect logic).
 For typo or document changes, use `docs:` or `chore:` instead:
@@ -87,7 +89,7 @@ If you don't know how to send a Pull Request, we recommend reading [the guide](h
 
 When sending a pull request, make sure your PR's title also follows the [Commit Convention](#commit-conventions).
 
-If you PR fixes or resolve an existing issue, please add a line as following in your PR description (replace `123` with a real issue number):
+If you PR fixes or resolves an existing issue, please add a line as following in your PR description (replace `123` with a real issue number):
 
 ```markdown
 fix #123
@@ -95,7 +97,7 @@ fix #123
 
 This will let GitHub know the issues are linked, and automatically close them once the PR gets merged. Learn more at [the guide](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
 
-It's ok to have multiple commits in a single PR, you don't need to rebase or force push for your changes as we will use `Squash and Merge` to squash the commits into one when merging.
+It's ok to have multiple commits in a single PR, you don't need to rebase or force push for your changes as we will use `Squash and Merge` to squash the commits into one commit when merging.
 
 ## 📖 References
 
@@ -117,7 +119,7 @@ You only need to do it once after Node.js is installed.
 
 [Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-When Corepack is enabled, under projects with configures on the right, it will install `v7.1.5` of `pnpm` if you don't have it already and use that version to run your command. This make sure everyone working on this project will have exact same behavior for the dependencies and the lockfile.
+Under projects with configures shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use that version to run your command. This make sure everyone working on this project will have exact same behavior for the dependencies and the lockfile.
 
 </td><td width="500px"><br>
 
@@ -163,3 +165,25 @@ VS Code's `settings.json`
 Since ESLint is already configured to format the code, there is no need to duplicate the functionality of Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
 
 If you have Prettier installed in your editor, we recommend you to disable it when working on the project to avoid conflicting.
+
+## 🗒 Additional Info
+
+In case you are interested in, here is Anthony's personal configrations and setups:
+
+- [antfu/dotfiles](https://github.com/antfu/dotfiles) - ZSH configs and other dotfiles
+- [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - VS Code settings
+- [antfu/eslint-config](https://github.com/antfu/eslint-config) - ESLint config
+
+In addition of `ni`, here is a few shell aliases to be even lazier:
+
+```bash
+alias d="nr dev"
+alias b="nr build"
+alias t="nr test"
+alias tu="nr test -u"
+alias p="nr play"
+alias c="nr typecheck"
+alias lint="nr lint"
+alias lintf="nr lint --fix"
+alias release="nr release"
+```
