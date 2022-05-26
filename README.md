@@ -119,7 +119,7 @@ You only need to do it once after Node.js is installed.
 
 [Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-Under projects with configures shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` if you don't have it already and use that version to run your command. This makes sure everyone working on this project will have the same behavior for the dependencies and the lockfile.
+Under projects with configuration as shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` (if you don't have it already) and use it to run your command. This makes sure everyone working on this project will have the same behavior for the dependencies and the lockfile.
 
 </td><td width="500px"><br>
 
