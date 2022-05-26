@@ -42,7 +42,7 @@ You can run `nr lint --fix` to have ESLint do the auto formatting and linting fi
 
 Learn more about the [ESLint Setup](#eslint).
 
-[**We don't use Prettier**](#why-no-prettier).
+[**We don't use Prettier**](#no-prettier).
 
 ### `nr test`
 
@@ -52,11 +52,17 @@ You can filter the tests to be run by `nr test [match]`, for example, `nr test f
 
 Config options are often under the `test` felid of `vitest.config.ts` or `vite.config.ts`.
 
-Vitest runs in watch mode by default, so you can modify the code and see the test result automatically, which is great for [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development). To run the test only once, you can do `nr test --run`.
+Vitest runs in [watch mode by default](https://vitest.dev/guide/features.html#watch-mode), so you can modify the code and see the test result automatically, which is great for [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development). To run the test only once, you can do `nr test --run`.
+
+For some projects, we might have multiple types of tests set up. For example `nr test:unit` for unit tests, `nr test:e2e` for end-to-end tests. `nr test` commonly run them together, you can run them separately as needed.
+
+### `nr docs`
+
+If the project contains a documentation, you can run `nr docs` to start the documentation dev server. Use `nr docs:build` to build the docs for production.
 
 ### `nr`
 
-For more, you can run bare `nr`, it will prompt a list of all available scripts.
+For more, you can run bare `nr`, which will prompt a list of all available scripts.
 
 ## 🙌 Sending Pull Request
 
@@ -127,7 +133,7 @@ When Corepack is enabled, under projects with configures on the right, it will i
 
 ### ESLint
 
-We use [ESLint](https://eslint.org/) for both linting and formatting with [my custom config preset](https://github.com/antfu/eslint-config).
+We use [ESLint](https://eslint.org/) for both linting and formatting with [`@antfu/eslint-config`](https://github.com/antfu/eslint-config).
 
 <table><tr><td width="500px" valign="top">
 
@@ -152,6 +158,8 @@ VS Code's `settings.json`
 
 </td></tr></table>
 
-### Why no Prettier
+### No Prettier
 
-// TODO:
+Since ESLint is already configured to format the code, there is no need to duplicate the functionality of Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
+
+If you have Prettier installed in your editor, we recommend you to disable it when working on the project to avoid conflicting.
