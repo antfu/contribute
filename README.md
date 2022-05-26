@@ -24,7 +24,7 @@ Start the development environment.
 
 If it's a Node.js package, it will start the build process in watch mode, or [stub the passive watcher when using `unbuild`](https://antfu.me/posts/publish-esm-and-cjs#stubbing).
 
-If it's a frontend project, it commonly starts the dev server then you can develop and see the changes in realtime.
+If it's a frontend project, it usually starts the dev server. You can then develop and see the changes in real time.
 
 ### `nr play`
 
