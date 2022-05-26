@@ -1,6 +1,6 @@
 # Contribution Guide
 
-> This is a general contribution guide for most of [my projects](https://antfu.me/projects).
+Hi! We are really excited that you are interested in contributing. This is a general contribution guide for most of [my projects](https://antfu.me/projects). Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
 ## 📦 Prerequirements
 
@@ -14,7 +14,7 @@ We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with
 We will use `ni`'s commands in the following code snippets. If you are not using it, you can do convention yourself: `ni = pnpm install`, `nr = pnpm run`
 
 1. [Enable Corepack](#corepack)
-3. Install dependencies with `ni` under the project root
+2. Install dependencies with `ni` under the project root
 
 ## 💡 Common Scripts
 
@@ -64,11 +64,11 @@ For more, you can run bare `nr`, it will prompt a list of all available scripts.
 
 Before you start to work on a feature pull request, it's always better to open an feature request issue first to discuss with the maintainers whether the feature is desired and the design of those features. This would help save time for both the maintainers and the contributors and help features to be shipped faster.
 
-For typo fixes, it's recommend to batch multiple typo fixes into on pull request when possible to maintainer a cleaner commit history.
+For typo fixes, it's recommend to batch multiple typo fixes into one pull request to maintain a cleaner commit history.
 
-### Commit conventions
+### Commit Convention
 
-We use [Conventional Commits](https://www.conventionalcommits.org/) for commits, which allow the changelog to be auto generated based on the commits.
+We use [Conventional Commits](https://www.conventionalcommits.org/) for commits, which allow the changelog to be auto generated based on the commits. Please read it through the guide.
 
 Note that `fix:` and `feat:` are for **actually code changes** (that might affects logics).
 For typo or document changes, use `docs:` or `chore:` instead:
@@ -77,7 +77,19 @@ For typo or document changes, use `docs:` or `chore:` instead:
 
 ### Pull Request
 
-// TODO:
+If you don't know how to send a Pull Request, we recommend reading [the guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
+When send a pull request, make sure your PR title also follows the [Commit Convention](#commit-conventions).
+
+If you PR fixes or resolves an existing issue, please add a line as following in your PR description (replace `123` will real issue number):
+
+```markdown
+fix #123
+```
+
+This will allow GitHub to know they are linked and automatically close the issue when the PR get merged. Learn more at [the guide](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
+
+It's Ok to have multiple commits in a single PR, you don't need to rebase or force push for your changes as we will use `Squash and Merge` to squash the commits into one on merging.
 
 ## 📖 References
 
@@ -137,9 +149,8 @@ VS Code's `settings.json`
   }
 }
 ```
-  
+
 </td></tr></table>
-  
 
 ### Why no Prettier
 
