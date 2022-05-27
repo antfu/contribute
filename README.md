@@ -141,7 +141,7 @@ In `package.json`, we usually have:
 
 So whenever you run `npm publish`, it will make sure you have the latest change in the distribution.
 
-</td><td width="500px" valign="top"><br>
+</td><td width="500px" valign="top">
 
 #### Build on CI
 
