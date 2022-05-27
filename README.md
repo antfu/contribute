@@ -13,6 +13,8 @@ We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with
 
 We will use `ni`'s commands in the following code snippets. If you are not using it, you can do the conversion yourself: `ni = pnpm install`, `nr = pnpm run`.
 
+To set the repository up:
+
 1. [Enable Corepack](#corepack)
 2. Install dependencies with `ni` under the project root
 
@@ -28,11 +30,11 @@ If it's a frontend project, it usually starts the dev server. You can then devel
 
 ### `nr play`
 
-If it's a Node.js package, it might start a dev server for the playground. The code is usually under `playground/`.
+If it's a Node.js package, it starts a dev server for the playground. The code is usually under `playground/`.
 
 ### `nr build`
 
-Build the project for production.
+Build the project for production. The result is usually under `dist/`.
 
 ### `nr lint`
 
@@ -76,7 +78,7 @@ For typo fixes, it's recommended to batch multiple typo fixes into one pull requ
 
 We use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages, which allows the changelog to be auto-generated based on the commits. Please read the guide through if you aren't familiar with it already.
 
-Only `fix:` and `feat:` will be presented in the change.
+Only `fix:` and `feat:` will be presented in the changelog.
 
 Note that `fix:` and `feat:` are for **actual code changes** (that might affect logic).
 For typo or document changes, use `docs:` or `chore:` instead:
