@@ -2,11 +2,6 @@
 
 Hi! We are really excited that you are interested in contributing. This is a general contribution guide for most of [my projects](https://antfu.me/projects). Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
-## 📦 Prerequisites
-
-- [Node.js](https://nodejs.org/), using the [latest LTS](https://nodejs.org/en/about/releases/)
-- [`pnpm`](https://pnpm.io/) for package management, as a replacement of [`npm`](https://docs.npmjs.com/cli/v8)
-
 ## 👨‍💻 Repository Setup
 
 We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), we highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
@@ -15,8 +10,12 @@ We will use `ni`'s commands in the following code snippets. If you are not using
 
 To set the repository up:
 
-1. [Enable Corepack](#corepack)
-2. Install dependencies with `ni` under the project root
+| Step | Command |
+|-------|--------|
+| 1. Install [Node.js](https://nodejs.org/), using the [latest LTS](https://nodejs.org/en/about/releases/) | - |
+| 2. [Enable Corepack](#corepack) | `corepack enable` |
+| 3. Install [`@antfu/ni`](https://github.com/antfu/ni) | `npm i -g @antfu/ni` |
+| 4. Install dependencies under the project root | `ni` |
 
 ## 💡 Commands
 
@@ -229,6 +228,13 @@ In case you are interested in, here is Anthony's personal configrations and setu
 - [antfu/dotfiles](https://github.com/antfu/dotfiles) - ZSH configs and other dotfiles
 - [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - VS Code settings
 - [antfu/eslint-config](https://github.com/antfu/eslint-config) - ESLint config
+
+CLI Tools
+
+- [ni](https://github.com/antfu/ni) - package manager alias
+- [esno](https://github.com/antfu/esno) - TypeScript runner
+- [taze](https://github.com/antfu/taze) - dependency updater
+- [bumpp](https://github.com/antfu/bumpp) - version bumpper
 
 In addition of `ni`, here is a few shell aliases to be even lazier:
 
