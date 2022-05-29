@@ -1,6 +1,6 @@
 # Contribution Guide
 
-Hi! We are really excited that you are interested in contributing. This is a general contribution guide for most of [my projects](https://antfu.me/projects). Before submitting your contribution, please make sure to take a moment and read through the following guide:
+Hey there! We are really excited that you are interested in contributing. This is a general contribution guide for most of [Anthony's projects](https://antfu.me/projects). Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
 ## 👨‍💻 Repository Setup
 
@@ -39,7 +39,7 @@ Build the project for production. The result is usually under `dist/`.
 
 We use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lints for JSON, YAML and Markdown files if exists.
 
-You can run `nr lint --fix` to have ESLint do the auto formatting and linting fix for you.
+You can run `nr lint --fix` to let ESLint formats and lints the code.
 
 Learn more about the [ESLint Setup](#eslint).
 
@@ -102,23 +102,23 @@ It's ok to have multiple commits in a single PR, you don't need to rebase or for
 
 ## 🧑‍🔧 Maintenance
 
-This section is for maintainer with write access, or if you want to maintain your own forks.
+This section is for maintainers with write access, or if you want to maintain your own forks.
 
 ### Update Dependencies
 
-Keeping dependencies up-to-date is important to keep the project alive and having latest bug fixes on time. We commend to update dependencies in weekly or bi-weekly intervals.
+Keeping dependencies up-to-date is one of the important aspects to keep projects alive and getting latest bug fixes on time. We recommend to update dependencies in weekly or bi-weekly intervals.
 
-We use [`taze`](https://github.com/antfu/taze) to update the dependencies manually most of the time. As deps updating bots like [Dependabot](https://github.com/dependabot) or [Renovate](https://renovatebot.com/) could be annoying when you have a lot projects.
+We use [`taze`](https://github.com/antfu/taze) to update the dependencies manually most of the time. As deps updating bots like [Dependabot](https://github.com/dependabot) or [Renovate](https://renovatebot.com/) could be a bit annoying when you have a lot projects.
 
 With `taze`, you can run `taze major -Ir` to check and select the versions to update interactive. `-I` stands for `--interactive`, `-r` stands for `--recursive` for monorepo.
 
-After bumpping, we install them, runing build and test to make sure nothing breaks before pushing to main.
+After bumpping, we install them, runing build and test to verify nothing breaks before pushing to main.
 
 ### Releasing
 
 Before you do, make sure you have lastest git commit from upstream and all CI passes.
 
-Most of the time, we do `nr release`. It will prompts a list for the target version you want to release. After select, it will bump your package.json and commit the changes with git tag, powered by [`bumpp`](https://github.com/antfu/bumpp).
+For most of the time, we do `nr release`. It will prompts a list for the target version you want to release. After select, it will bump your package.json and commit the changes with git tag, powered by [`bumpp`](https://github.com/antfu/bumpp).
 
 There are two kinds of publishing setup, either of them are done by `nr release` already.
 
@@ -174,7 +174,7 @@ You only need to do it once after Node.js is installed.
 
 [Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-Under projects with configuration as shown on the right, when Corepack is enabled, it will install `v7.1.5` of `pnpm` (if you don't have it already) and use it to run your command. This makes sure everyone working on this project will have the same behavior for the dependencies and the lockfile.
+Under projects with configuration as shown on the right, corepack will install `v7.1.5` of `pnpm` (if you don't have it already) and use it to run your commands. This makes sure everyone working on this project have the same behavior for the dependencies and the lockfile.
 
 </td><td width="500px"><br>
 
@@ -217,7 +217,7 @@ VS Code's `settings.json`
 
 ### No Prettier
 
-Since ESLint is already configured to format the code, there is no need to duplicate the functionality of Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
+Since ESLint is already configured to format the code, there is no need to duplicate the functionality with Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
 
 If you have Prettier installed in your editor, we recommend you disable it when working on the project to avoid conflict.
 
