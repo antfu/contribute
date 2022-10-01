@@ -217,7 +217,7 @@ VS Code's `settings.json`
 
 ### No Prettier
 
-Since ESLint is already configured to format the code, there is no need to duplicate the functionality with Prettier. To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
+Since ESLint is already configured to format the code, there is no need to duplicate the functionality with Prettier ([*Why I don't Use Prettier*](https://antfu.me/posts/why-not-prettier)). To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
 
 If you have Prettier installed in your editor, we recommend you disable it when working on the project to avoid conflict.
 
