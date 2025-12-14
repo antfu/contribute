@@ -1,6 +1,15 @@
 # Contribution Guide
 
-Hey there! We are really excited that you are interested in contributing. This is a general contribution guide for most of [Anthony's projects](https://antfu.me/projects). Before submitting your contribution, please make sure to take a moment and read through the following guide:
+Hey there! We are really excited that you are interested in contributing. This is a general contribution guide for most of [Anthony's projects](https://antfu.me/projects).
+
+Before submitting your contribution, please make sure to take a moment and read through the following guide:
+
+## 👔 Etiquette
+
+> [!IMPORTANT]
+> Please aware that vibe-coding contributions are **🚫 STRICTLY PROHIBITED**. We are humans behind these open source projects trying hard to maintain good quality and a healthy community. Not only do vibe-coding contributions pollute the code, but they also drain A LOT of unnecessary energy and time from maintainers and toxic the community and collaboration. All vibe-coded, AI-generated PRs will be rejected and closed without further notice. In serious cases, your account might be banned organization-wide and reported to GitHub.
+>
+> **PLEASE SHOW SOME RESPECT** and do not do so.
 
 ## 👨‍💻 Repository Setup
 
