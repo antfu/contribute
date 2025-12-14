@@ -7,7 +7,10 @@ Before submitting your contribution, please make sure to take a moment and read 
 ## 👔 Etiquette
 
 > [!IMPORTANT]
-> Please aware that vibe-coding contributions are **🚫 STRICTLY PROHIBITED**. We are humans behind these open source projects trying hard to maintain good quality and a healthy community. Not only do vibe-coding contributions pollute the code, but they also drain A LOT of unnecessary energy and time from maintainers and toxic the community and collaboration. All vibe-coded, AI-generated PRs will be rejected and closed without further notice. In serious cases, your account might be banned organization-wide and reported to GitHub.
+> 
+> Please be aware that vibe-coding contributions are **🚫 STRICTLY PROHIBITED**. We are humans behind these open source projects, trying hard to maintain good quality and a healthy community. Not only do vibe-coding contributions pollute the code, but they also drain A LOT of unnecessary energy and time from maintainers and toxify the community and collaboration.
+>
+> All vibe-coded, AI-generated PRs will be rejected and closed without further notice. In severe cases, your account might be banned organization-wide and reported to GitHub.
 >
 > **PLEASE SHOW SOME RESPECT** and do not do so.
 
@@ -46,7 +49,7 @@ Build the project for production. The result is usually under `dist/`.
 
 ### `nr lint`
 
-We use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lints for JSON, YAML and Markdown files if exists.
+We use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lints for JSON, YAML, and Markdown files if they exist.
 
 You can run `nr lint --fix` to let ESLint formats and lints the code.
 
@@ -64,7 +67,7 @@ Config options are often under the `test` field of `vitest.config.ts` or `vite.c
 
 Vitest runs in [watch mode by default](https://vitest.dev/guide/features.html#watch-mode), so you can modify the code and see the test result automatically, which is great for [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development). To run the test only once, you can do `nr test --run`.
 
-For some projects, we might have multiple types of tests set up. For example `nr test:unit` for unit tests, `nr test:e2e` for end-to-end tests. `nr test` commonly run them together, you can run them separately as needed.
+For some projects, we might have multiple types of tests set up. For example, `nr test:unit` for unit tests, `nr test:e2e` for end-to-end tests. `nr test` commonly runs them together; you can run them separately as needed.
 
 ### `nr docs`
 
