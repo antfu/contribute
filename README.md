@@ -102,6 +102,15 @@ For typo or document changes, use `docs:` or `chore:` instead:
 
 - ~~`fix: typo`~~ -> `docs: fix typo`
 
+### Before Submitting
+
+Before you submit a pull request, make sure to complete the following steps:
+
+- Run `nr lint --fix` to fix any linting issues
+- Run `nr test` to ensure all tests pass
+- If the project has type checking, run `nr typecheck` (or equivalent)
+- For packages, verify the build succeeds with `nr build`
+
 ### Pull Request
 
 If you don't know how to send a Pull Request, we recommend reading [the guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
