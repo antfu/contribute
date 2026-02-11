@@ -4,19 +4,25 @@ Hey there! We are really excited that you are interested in contributing. This i
 
 Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
-## 👔 Etiquette
+## 🤖 Using AI
 
-> [!IMPORTANT]
-> 
-> Please be aware that vibe-coding contributions are **🚫 STRICTLY PROHIBITED**. We are humans behind these open source projects, trying hard to maintain good quality and a healthy community. Not only do vibe-coding contributions pollute the code, but they also drain A LOT of unnecessary energy and time from maintainers and toxify the community and collaboration.
->
-> All vibe-coded, AI-generated PRs will be rejected and closed without further notice. In severe cases, your account might be banned organization-wide and reported to GitHub.
->
-> **PLEASE SHOW SOME RESPECT** and do not do so.
+You're welcome to use AI tools to help you contribute. But there are two important ground rules:
+
+### 1. Never let an LLM speak for you
+
+When you write a comment, issue, or PR description, use your own words. Grammar and spelling don't matter &ndash; real connection does. AI-generated summaries tend to be long-winded, dense, and often inaccurate. Simplicity is an art. The goal is not to sound impressive, but to communicate clearly.
+
+### 2. Never let an LLM think for you
+
+Feel free to use AI to write code, tests, or point you in the right direction. But always understand what it's written before contributing it. Take personal responsibility for your contributions. Don't say "ChatGPT says..." &ndash; tell us what _you_ think.
+
+PRs that we consider fully vibe-coded may be closed without further explanation.
+
+For more context, see [Using AI in open source](https://roe.dev/blog/using-ai-in-open-source).
 
 ## 👨‍💻 Repository Setup
 
-We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/), we highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
+We use [`pnpm`](https://pnpm.io/) for most of the projects, and maybe a few with [`yarn`](https://classic.yarnpkg.com/). We highly recommend you install [`ni`](https://github.com/antfu/ni) so you don't need to worry about the package manager when switching across different projects.
 
 We will use `ni`'s commands in the following code snippets. If you are not using it, you can do the conversion yourself: `ni = pnpm install`, `nr = pnpm run`.
 
@@ -51,7 +57,7 @@ Build the project for production. The result is usually under `dist/`.
 
 We use [ESLint](https://eslint.org/) for **both linting and formatting**. It also lints for JSON, YAML, and Markdown files if they exist.
 
-You can run `nr lint --fix` to let ESLint formats and lints the code.
+You can run `nr lint --fix` to let ESLint format and lint the code.
 
 Learn more about the [ESLint Setup](#eslint).
 
@@ -59,7 +65,7 @@ Learn more about the [ESLint Setup](#eslint).
 
 ### `nr test`
 
-Run the tests. We mostly using [Vitest](https://vitest.dev/) - a replacement of [Jest](https://jestjs.io/).
+Run the tests. We mostly use [Vitest](https://vitest.dev/) - a replacement of [Jest](https://jestjs.io/).
 
 You can filter the tests to be run by `nr test [match]`, for example, `nr test foo` will only run test files that contain `foo`.
 
@@ -100,7 +106,7 @@ For typo or document changes, use `docs:` or `chore:` instead:
 
 If you don't know how to send a Pull Request, we recommend reading [the guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-When sending a pull request, make sure your PR's title also follows the [Commit Convention](#commit-conventions).
+When sending a pull request, make sure your PR's title also follows the [Commit Convention](#commit-convention).
 
 If your PR fixes or resolves an existing issue, please add the following line in your PR description (replace `123` with a real issue number):
 
@@ -118,21 +124,21 @@ This section is for maintainers with write access, or if you want to maintain yo
 
 ### Update Dependencies
 
-Keeping dependencies up-to-date is one of the important aspects to keep projects alive and getting latest bug fixes on time. We recommend to update dependencies in weekly or bi-weekly intervals.
+Keeping dependencies up-to-date is one of the important aspects to keep projects alive and getting the latest bug fixes on time. We recommend updating dependencies in weekly or bi-weekly intervals.
 
-We use [`taze`](https://github.com/antfu/taze) to update the dependencies manually most of the time. As deps updating bots like [Dependabot](https://github.com/dependabot) or [Renovate](https://renovatebot.com/) could be a bit annoying when you have a lot projects.
+We use [`taze`](https://github.com/antfu/taze) to update the dependencies manually most of the time. As deps updating bots like [Dependabot](https://github.com/dependabot) or [Renovate](https://renovatebot.com/) could be a bit annoying when you have a lot of projects.
 
-With `taze`, you can run `taze major -Ir` to check and select the versions to update interactive. `-I` stands for `--interactive`, `-r` stands for `--recursive` for monorepo.
+With `taze`, you can run `taze major -Ir` to check and select the versions to update interactively. `-I` stands for `--interactive`, `-r` stands for `--recursive` for monorepo.
 
-After bumpping, we install them, runing build and test to verify nothing breaks before pushing to main.
+After bumping, we install them, run build and test to verify nothing breaks before pushing to main.
 
 ### Releasing
 
-Before you do, make sure you have lastest git commit from upstream and all CI passes.
+Before you do, make sure you have the latest git commit from upstream and all CI passes.
 
-For most of the time, we do `nr release`. It will prompts a list for the target version you want to release. After select, it will bump your package.json and commit the changes with git tag, powered by [`bumpp`](https://github.com/antfu/bumpp).
+For most of the time, we do `nr release`. It will prompt a list for the target version you want to release. After selecting, it will bump your package.json and commit the changes with a git tag, powered by [`bumpp`](https://github.com/antfu/bumpp).
 
-There are two kinds of publishing setup, either of them are done by `nr release` already.
+There are two kinds of publishing setup, both of which are handled by `nr release`.
 
 <table><tr><td width="500px" valign="top">
 
@@ -156,11 +162,11 @@ So whenever you run `npm publish`, it will make sure you have the latest change 
 
 #### Build on CI
 
-For complex projects that take long time to build, we might move the building and publishing process to CI. So it doesn't block your local workflow.
+For complex projects that take a long time to build, we might move the building and publishing process to CI. So it doesn't block your local workflow.
 
 They will be triggered by the `v` prefixed git tag added by `bumpp`. The action is usually defined under `.github/workflows/release.yml`
 
-> When maintaining your own fork, you might need to see `NPM_TOKEN` secret to your repository for it to publish the packages.
+> When maintaining your own fork, you might need to set the `NPM_TOKEN` secret to your repository for it to publish the packages.
 
 </td></tr></table>
 
@@ -184,9 +190,9 @@ You only need to do it once after Node.js is installed.
 
 #### What's Corepack
 
-[Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version for package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
+[Corepack](https://nodejs.org/api/corepack.html) makes sure you are using the correct version of the package manager when you run corresponding commands. Projects might have `packageManager` field in their `package.json`.
 
-Under projects with configuration as shown on the right, corepack will install `v7.1.5` of `pnpm` (if you don't have it already) and use it to run your commands. This makes sure everyone working on this project have the same behavior for the dependencies and the lockfile.
+Under projects with configuration as shown on the right, corepack will install `v7.1.5` of `pnpm` (if you don't have it already) and use it to run your commands. This makes sure everyone working on this project has the same behavior for the dependencies and the lockfile.
 
 </td><td width="500px"><br>
 
@@ -229,13 +235,13 @@ VS Code's `settings.json`
 
 ### No Prettier
 
-Since ESLint is already configured to format the code, there is no need to duplicate the functionality with Prettier ([*Why I don't Use Prettier*](https://antfu.me/posts/why-not-prettier)). To format the code, you can run `nr lint --fix` or referring the [ESLint section](#eslint) for IDE Setup.
+Since ESLint is already configured to format the code, there is no need to duplicate the functionality with Prettier ([*Why I don't Use Prettier*](https://antfu.me/posts/why-not-prettier)). To format the code, you can run `nr lint --fix` or refer to the [ESLint section](#eslint) for IDE Setup.
 
 If you have Prettier installed in your editor, we recommend you disable it when working on the project to avoid conflict.
 
 ## 🗒 Additional Info
 
-In case you are interested in, here is Anthony's personal configrations and setups:
+In case you are interested, here are Anthony's personal configurations and setups:
 
 - [antfu/dotfiles](https://github.com/antfu/dotfiles) - ZSH configs and other dotfiles
 - [antfu/vscode-settings](https://github.com/antfu/vscode-settings) - VS Code settings
@@ -246,9 +252,9 @@ CLI Tools
 - [ni](https://github.com/antfu/ni) - package manager alias
 - [esno](https://github.com/antfu/esno) - TypeScript runner
 - [taze](https://github.com/antfu/taze) - dependency updater
-- [bumpp](https://github.com/antfu/bumpp) - version bumpper
+- [bumpp](https://github.com/antfu/bumpp) - version bumper
 
-In addition of `ni`, here is a few shell aliases to be even lazier:
+In addition to `ni`, here are a few shell aliases to be even lazier:
 
 ```bash
 alias d="nr dev"
